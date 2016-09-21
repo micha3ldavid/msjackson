@@ -12,6 +12,12 @@ An elemental grid system is one based on element sizes vs. the window. Grid syst
 
 Ms. Jackson is two parts: CSS (or SCSS) and JavaScript. Both are light-weight but, working together, produce a strong, flexible element-based grid system. If you are using SASS/SCSS as your CSS language, you have complete control over the number of breakpoints, their names, column count, and gutters. If you're using standard CSS, I've put together two static files to use: one with four breakpoints and one with five, both of which are twelve column grids. On the JavaScript side, all you have to do is provide the breakpoint names and their size values and Ms. Jackson will do the rest.
 
+### As Node Module
+
+You can pull down the latest version of Ms. Jackson as a node module and reference your files from there if you like. To do so run the below npm bash command.
+
+<pre>$ npm install msJackson</pre>
+
 ### Setting up your SCSS
 
 Including msJackson.scss will not actually render anything. In order to have Ms. Jackson create the elemental grid system you must call her like in the code snippet below:
