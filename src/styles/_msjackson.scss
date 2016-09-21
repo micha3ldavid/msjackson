@@ -77,17 +77,18 @@ $-msJackson-selectors:
   @if $-msJackson-row-initialized == false {
     
     %-mj-row {
+      box-sizing: border-box;
       margin-left:  $gutter / -2;
       margin-right: $gutter / -2;
 
       &:before,
       &:after {
-        content: '';
+        content: ' ';
         clear: both;
         display: table;
       }
 
-      > [class*="col-"] {
+      > [class^="col-"], > [class*=" col-"] {
         box-sizing: border-box;
         padding-left:  $gutter / 2;
         padding-right: $gutter / 2;
