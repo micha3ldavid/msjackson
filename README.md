@@ -1,4 +1,4 @@
-# Ms. Jackson
+![Ms. Jackson](https://raw.githubusercontent.com/micha3ldavid/msjackson/master/src/images/logo.png)
 
 ## Are You Nasty?
 
