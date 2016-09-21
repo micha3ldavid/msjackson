@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ms. Jackson | Elemental Breakpoint System</title>
+		<link type="text/css" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="../src/styles/msjackson-12x5.css" />
+		<link type="text/css" rel="stylesheet" href="theme.css" />
+		<style>
+
+			#example-2 {
+			  width: 60%;
+			}
+
+			#example-3 {
+			  width: 40%;
+			}
+
+			.color-1, 
+			.color-2, 
+			.color-3 {
+			  color: white;
+			  padding-top: 50px;
+			  padding-bottom: 50px;
+			  overflow: hidden;
+			  text-align: center;
+			  text-transform: uppercase;
+			}
+
+			.color-1 {
+			  background: #E74C3C;
+			}
+
+			.color-2 {
+			  background: #CB4335;
+			}
+
+			.color-3 {
+			  background: #B03A2E;
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-default navbar-theme">
+			  <div class="navbar-header">
+			    <div href="#" class="navbar-brand clearfix">
+			      <img class="navbar-logo" src="../src/images/logo.png" alt="Ms. Jackson" />
+			      <span class="navbar-details">
+						<span class="navbar-title">Elemental Grid System</span>
+			      		<span class="navbar-quote">Flexible Grids Based on Element Queries</span>
+			      </span>
+			    </div>
+			  </div>
+			  <ul class="nav navbar-top">
+			    <li class="active">
+			      <a href="http://codepen.io/micha3ldavid/post/msjackson">Codepen</a>
+			    </li>
+			    <li>
+			      <a href="https://github.com/micha3ldavid/msjackson">Github</a>
+			    </li>
+			  </ul>
+			</nav>
+		</header>
+		<div class="container">
+			<div>
+		    	<h4>Container (width: 100%)</h2>
+		  	</div>
+			<div class="mj">
+			    <div class="color-1 col-xs-1 col-lg-5"></div>
+			    <div class="color-2 col-xs-10 col-lg-2"></div>
+			    <div class="color-3 col-xs-1 col-lg-5"></div>
+			</div>
+			<div>
+			    <h4>Container (width: 60%)</h2>
+			</div>
+			<div id="example-2" class="mj">
+			    <div class="color-1 col-xs-4 col-sm-1"></div>
+			    <div class="color-2 col-xs-4 col-sm-2"></div>
+			    <div class="color-3 col-xs-4 col-sm-9"></div>
+			</div>
+			<div>
+			    <h4>Container (width: 40%)</h2>
+			</div>
+			<div id="example-3" class="mj">
+			    <div class="color-1 col-xs-7 col-sm-1"></div>
+			    <div class="color-2 col-xs-3 col-sm-5"></div>
+			    <dov class="color-3 col-xs-2 col-sm-6"></dov>
+			</div>
+			<div class="row documentation">
+				<div class="col-xs-12">
+					<article>
+						<h2>Are You Nasty?</h2>
+						<p>Panic at the Disco might have you believing Ms. Jackson is a two-timing floosy of a woman, and she very well may be, but she's also the lady of choice for elemental-based grid systems.</p>
+						<h3>What is an Elemental Grid System?</h3>
+						<p>An elemental grid system is one based on element sizes vs. the window. Grid systems today use media queries, which waterfall layout adjustments to your page based on window breakpoint sizes, creating the responsive layouts we all have grown to love. And most of the time this gets the job done. However, recently I have been receiving requests where clients want modules to be responsive to their containers instead of the window. This is the ultimate in decoupling web components and unfortunately CSS does not have a way of doing this as of yet.</p>
+						<h3>Enter Ms. Jackson</h3>
+						<p>Ms. Jackson is two parts: CSS (or SCSS) and JavaScript. Both are light-weight but, working together, produce a strong, flexible element-based grid system. If you are using SASS/SCSS as your CSS language, you have complete control over the number of breakpoints, their names, column count, and gutters. If you're using standard CSS, I've put together two static files to use: one with four breakpoints and one with five, both of which are twelve column grids. On the JavaScript side, all you have to do is provide the breakpoint names and their size values and Ms. Jackson will do the rest.</p>
+						<h3>Setting up your SCSS</h3>
+						<p>Including msJackson.scss will not actually render anything. In order to have Ms. Jackson create the elemental grid system you must call her like in the code snippet below:</p>
+						<pre>@mixin msJackson();</pre>
+
+						<p>To customize Ms. Jackson's output, there are two things we can do. The first is to override her current configuation variables like in the first code sample below. The second way we can customize her output is to pass values in as parameters like in the second code sample below.</p>
+						<pre>
+$msJackson-columns: 12 !default;
+$msJackson-gutters: 30px !default;
+$msJackson-breakpoints: xs, sm, md, lg, xl !default;</pre>
+						<pre>@mixin msJackson( (xs, sm, md, lg), 12, 30px ); </pre>
+						<h3>Setting up your JavaScript</h3>
+						<p>The second part of Ms. Jackson's magic rests with JavaScript. But don't worry, the script is fast, light-weight, and has no depenencies. The script can also be used as an AMD module, CommonJS module, mixed with Angular and even React. You can instanciate Ms. Jackson with the 'new' keyword and pass in up to two parameters, the first of which is required.</p>
+						<pre>
+var mj = new msJackson([
+	{ name: 'xs', value: '*' },
+	{ name: 'sm', value: 480 },
+	{ name: 'md', value: 720 },
+	{ name: 'lg', value: 990 },
+	{ name: 'xl', value: 1100 }
+]);</pre>
+						<p>If you only want Ms. Jackson on a perticular module(s) you can specify a selector as the second parameter</p>
+						<pre>
+var mj = new msJackson([
+	{ name: 'xs', value: '*' },
+	{ name: 'sm', value: 480 },
+	{ name: 'md', value: 720 },
+	{ name: 'lg', value: 990 },
+	{ name: 'xl', value: 1100 }
+], '#my-module');</pre>
+					<h3>Public API</h3>
+					<p>There are a handful of helpful methods in place for interacting with Ms. Jackson. She's an easy lady, therefore her methods are easy to use as well.</p>
+					<ul class="list-unstyled">
+						<li>
+							<h4>query()</h4>
+							<p>Takes no arguments. This method will re-query selectors to watch onresize in it's given context. Useful when adding/removeing content. Default context is the document.</p>
+						</li>
+						<li>
+							<h4>updateAll()</h4>
+							<p>Takes no arguments. Manually call update() on each element in Ms. Jacksons queue. This will re-calculate element sizes and reapply breakpoint classes if necessary.
+						</li>
+						<li>
+							<h4>update( el )</h4>
+							<p>Takes one argumemt, el, as a DOM Node (we do not rely on jQuery). You can call this method publicly and pass it any element you like, which it will then calculate and apply classes if necessary.</p>
+						</li>
+						<li>
+							<h4>unwatch()</h4>
+							<p>Takes no arguments. Remove watching elements in the Ms. Jackson instance queue for size changes.</p>
+						</li>
+						<li>
+							<h4>watch()</h4>
+							<p>Takes no arguments. Reapply the watch handler if removed by unwatch(), which measures elements in the Ms. Jackson instance queue and applies the necessary classes.</p>
+						</li>
+					</ul>
+					</article>
+				</div>
+			</div>
+		<script src="../src/scripts/msjackson.js"></script>
+		<script>
+
+			var j = new msJackson( [
+				{ name: 'xs', value: '*' },
+				{ name: 'sm', value: 440 },
+				{ name: 'md', value: 770 },
+				{ name: 'lg', value: 990 },
+				{ name: 'xl', value: 1100 }
+			]);
+
+		</script>
+	</body>
+</html>

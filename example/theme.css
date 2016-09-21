@@ -1,7 +1,11 @@
 
+@import 'https://fonts.googleapis.com/css?family=Roboto+Slab:400,700';
+
 body {
 	background: #333;
 	color: #fff;
+    font-family: 'Roboto Slab';
+    margin-bottom: 100px;
 }
 
 body a {
@@ -13,6 +17,15 @@ body a:active,
 body a:focus {
 	color: cadetblue;
 	text-decoration: none;
+}
+
+.documentation h1, 
+.documentation h2, 
+.documentation h3, 
+.documentation h4, 
+.documentation h5, 
+.documentation h6 {
+    color: crimson;
 }
 
 .navbar-theme {
