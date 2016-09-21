@@ -42,7 +42,8 @@
   display: table;
 }
 
-.mj > [class*="col-"] {
+.mj > [class^="col-"], 
+.mj > [class*=" col-"] {
   box-sizing: border-box;
   padding-left: 15px;
   padding-right: 15px;
