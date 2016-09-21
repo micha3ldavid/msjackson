@@ -29,7 +29,7 @@
 	//
 	// AMD support
 	// ---------------------------------------------------
-	if ( typeof define === 'object' && define.amd ) {
+	if ( typeof define === 'function' && define.amd ) {
 
 		define( [], function () {
 			return factory( root );
@@ -229,7 +229,7 @@
 
 	msJackson.prototype = {
 
-		version: 'v1.0.2',
+		version: 'v1.0.3',
 
 		breakpoints: null,
 
