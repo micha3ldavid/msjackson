@@ -1,6 +1,6 @@
 {
   "name": "msJackson",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Light-weight grid system based off elemental breakpoints.",
   "keywords": [
   	"css",
@@ -26,10 +26,9 @@
   "bugs": "https://github.com/micha3ldavid/msjackson/issues",
   "dependencies": {},
   "files": [
-  	"src",
-  	"js/*.js",
-  	"styles/*.scss",
-  	"styles/*.css",
+  	"src/js/*.js",
+  	"src/styles/*.scss",
+  	"src/styles/*.css",
   	"LICENSE"
   ]
 }

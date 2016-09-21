@@ -178,7 +178,11 @@
 		// ---------------------------------------------
 		emit: function () {
 
-			for ( var i = 0, l = this.handlers.length; i < l; i++ ) {
+			var 
+			i = 0,
+			l = this.handlers.length;
+
+			for ( ; i < l; i++ ) {
 				this.handlers[ i ]();
 			}
 		},
@@ -200,7 +204,11 @@
 				return;
 			}
 
-			for ( var i = 0, l = this.handlers.length; i < l; i++ ) {
+			var 
+			i = 0,
+			l = this.handlers.length;
+
+			for ( ; i < l; i++ ) {
 
 				if ( handler === this.handlers[i] ) {
 
@@ -221,7 +229,7 @@
 
 	msJackson.prototype = {
 
-		version: 'v1.0.0',
+		version: 'v1.0.2',
 
 		breakpoints: null,
 
@@ -298,9 +306,10 @@
 		// ------------------------------------------------------
 		updateAll: function () {
 
-			var n = this.elements,
-				l = n.length,
-				i = 0;
+			var 
+			n = this.elements,
+			l = n.length,
+			i = 0;
 
 			for( ; i < l; i++ ) {
 				this.update( n[ i ] );
@@ -316,12 +325,13 @@
 		// -------------------------------------------------------
 		update: function ( el ) {
 
-			var bs = this.breakpoints,
-				l = bs.length,
-				w = el.offsetWidth,
-				f = false,
-				i = 0,
-				b;
+			var 
+			bs = this.breakpoints,
+			l = bs.length,
+			w = el.offsetWidth,
+			f = false,
+			i = 0,
+			b;
 
 			for( ; i < l; i++ ) {
 
