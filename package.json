@@ -1,0 +1,35 @@
+{
+  "name": "msJackson",
+  "version": "1.0.0",
+  "description": "Light-weight grid system based off elemental breakpoints.",
+  "keywords": [
+  	"css",
+  	"sass",
+  	"scss",
+  	"grid",
+  	"system",
+  	"media",
+  	"front-end",
+  	"web"
+  ],
+  "author": "Michael Juliano",
+  "license": "MIT",
+  "homepage": "https://github.com/micha3ldavid",
+  "main": "src/js/msJackson",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+  	"type": "git",
+  	"url": "https://github.com/micha3ldavid/msjackson.git"
+  },
+  "bugs": "https://github.com/micha3ldavid/msjackson/issues",
+  "dependencies": {},
+  "files": {
+  	"src",
+  	"js/*.js",
+  	"styles/*.scss",
+  	"styles/*.css",
+  	"LICENSE"
+  }
+}

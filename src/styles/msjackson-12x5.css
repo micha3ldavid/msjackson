@@ -1,0 +1,116 @@
+/**********************************************************************************************
+
+  The MIT License (MIT)
+  Copyright (c) 2016 Michael Juliano
+
+  Permission is hereby granted, free of charge, to any person obtaining 
+  a copy of this software and associated documentation files (the "Software"), 
+  to deal in the Software without restriction, including without limitation the 
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+  copies of the Software, and to permit persons to whom the Software is 
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all 
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+  PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE 
+  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+  OTHER DEALINGS IN THE SOFTWARE.
+  
+***********************************************************************************************/
+
+/**********************************************************************************************
+
+  MsJackson (static) CSS
+
+  12 columns x 5 breakpoints (xs, xm, md, lg, xl)
+
+***********************************************************************************************/
+
+.mj {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.mj:before, .mj:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.mj > [class*="col-"] {
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mj-xs > .col-xs-1, .mj-sm > .col-xs-1, html .mj-sm > .col-sm-1, .mj-md > .col-xs-1, html .mj-md > .col-sm-1, html body .mj-md > .col-md-1, .mj-lg > .col-xs-1, html .mj-lg > .col-sm-1, html body .mj-lg > .col-md-1, html body .mj.mj-lg > .col-lg-1, .mj-xl > .col-xs-1, html .mj-xl > .col-sm-1, html body .mj-xl > .col-md-1, html body .mj.mj-xl > .col-lg-1, html body .mj[class].mj-xl > .col-xl-1 {
+  float: left;
+  width: 8.33333%;
+}
+
+.mj-xs > .col-xs-2, .mj-sm > .col-xs-2, html .mj-sm > .col-sm-2, .mj-md > .col-xs-2, html .mj-md > .col-sm-2, html body .mj-md > .col-md-2, .mj-lg > .col-xs-2, html .mj-lg > .col-sm-2, html body .mj-lg > .col-md-2, html body .mj.mj-lg > .col-lg-2, .mj-xl > .col-xs-2, html .mj-xl > .col-sm-2, html body .mj-xl > .col-md-2, html body .mj.mj-xl > .col-lg-2, html body .mj[class].mj-xl > .col-xl-2 {
+  float: left;
+  width: 16.66667%;
+}
+
+.mj-xs > .col-xs-3, .mj-sm > .col-xs-3, html .mj-sm > .col-sm-3, .mj-md > .col-xs-3, html .mj-md > .col-sm-3, html body .mj-md > .col-md-3, .mj-lg > .col-xs-3, html .mj-lg > .col-sm-3, html body .mj-lg > .col-md-3, html body .mj.mj-lg > .col-lg-3, .mj-xl > .col-xs-3, html .mj-xl > .col-sm-3, html body .mj-xl > .col-md-3, html body .mj.mj-xl > .col-lg-3, html body .mj[class].mj-xl > .col-xl-3 {
+  float: left;
+  width: 25%;
+}
+
+.mj-xs > .col-xs-4, .mj-sm > .col-xs-4, html .mj-sm > .col-sm-4, .mj-md > .col-xs-4, html .mj-md > .col-sm-4, html body .mj-md > .col-md-4, .mj-lg > .col-xs-4, html .mj-lg > .col-sm-4, html body .mj-lg > .col-md-4, html body .mj.mj-lg > .col-lg-4, .mj-xl > .col-xs-4, html .mj-xl > .col-sm-4, html body .mj-xl > .col-md-4, html body .mj.mj-xl > .col-lg-4, html body .mj[class].mj-xl > .col-xl-4 {
+  float: left;
+  width: 33.33333%;
+}
+
+.mj-xs > .col-xs-5, .mj-sm > .col-xs-5, html .mj-sm > .col-sm-5, .mj-md > .col-xs-5, html .mj-md > .col-sm-5, html body .mj-md > .col-md-5, .mj-lg > .col-xs-5, html .mj-lg > .col-sm-5, html body .mj-lg > .col-md-5, html body .mj.mj-lg > .col-lg-5, .mj-xl > .col-xs-5, html .mj-xl > .col-sm-5, html body .mj-xl > .col-md-5, html body .mj.mj-xl > .col-lg-5, html body .mj[class].mj-xl > .col-xl-5 {
+  float: left;
+  width: 41.66667%;
+}
+
+.mj-xs > .col-xs-6, .mj-sm > .col-xs-6, html .mj-sm > .col-sm-6, .mj-md > .col-xs-6, html .mj-md > .col-sm-6, html body .mj-md > .col-md-6, .mj-lg > .col-xs-6, html .mj-lg > .col-sm-6, html body .mj-lg > .col-md-6, html body .mj.mj-lg > .col-lg-6, .mj-xl > .col-xs-6, html .mj-xl > .col-sm-6, html body .mj-xl > .col-md-6, html body .mj.mj-xl > .col-lg-6, html body .mj[class].mj-xl > .col-xl-6 {
+  float: left;
+  width: 50%;
+}
+
+.mj-xs > .col-xs-7, .mj-sm > .col-xs-7, html .mj-sm > .col-sm-7, .mj-md > .col-xs-7, html .mj-md > .col-sm-7, html body .mj-md > .col-md-7, .mj-lg > .col-xs-7, html .mj-lg > .col-sm-7, html body .mj-lg > .col-md-7, html body .mj.mj-lg > .col-lg-7, .mj-xl > .col-xs-7, html .mj-xl > .col-sm-7, html body .mj-xl > .col-md-7, html body .mj.mj-xl > .col-lg-7, html body .mj[class].mj-xl > .col-xl-7 {
+  float: left;
+  width: 58.33333%;
+}
+
+.mj-xs > .col-xs-8, .mj-sm > .col-xs-8, html .mj-sm > .col-sm-8, .mj-md > .col-xs-8, html .mj-md > .col-sm-8, html body .mj-md > .col-md-8, .mj-lg > .col-xs-8, html .mj-lg > .col-sm-8, html body .mj-lg > .col-md-8, html body .mj.mj-lg > .col-lg-8, .mj-xl > .col-xs-8, html .mj-xl > .col-sm-8, html body .mj-xl > .col-md-8, html body .mj.mj-xl > .col-lg-8, html body .mj[class].mj-xl > .col-xl-8 {
+  float: left;
+  width: 66.66667%;
+}
+
+.mj-xs > .col-xs-9, .mj-sm > .col-xs-9, html .mj-sm > .col-sm-9, .mj-md > .col-xs-9, html .mj-md > .col-sm-9, html body .mj-md > .col-md-9, .mj-lg > .col-xs-9, html .mj-lg > .col-sm-9, html body .mj-lg > .col-md-9, html body .mj.mj-lg > .col-lg-9, .mj-xl > .col-xs-9, html .mj-xl > .col-sm-9, html body .mj-xl > .col-md-9, html body .mj.mj-xl > .col-lg-9, html body .mj[class].mj-xl > .col-xl-9 {
+  float: left;
+  width: 75%;
+}
+
+.mj-xs > .col-xs-10, .mj-sm > .col-xs-10, html .mj-sm > .col-sm-10, .mj-md > .col-xs-10, html .mj-md > .col-sm-10, html body .mj-md > .col-md-10, .mj-lg > .col-xs-10, html .mj-lg > .col-sm-10, html body .mj-lg > .col-md-10, html body .mj.mj-lg > .col-lg-10, .mj-xl > .col-xs-10, html .mj-xl > .col-sm-10, html body .mj-xl > .col-md-10, html body .mj.mj-xl > .col-lg-10, html body .mj[class].mj-xl > .col-xl-10 {
+  float: left;
+  width: 83.33333%;
+}
+
+.mj-xs > .col-xs-11, .mj-sm > .col-xs-11, html .mj-sm > .col-sm-11, .mj-md > .col-xs-11, html .mj-md > .col-sm-11, html body .mj-md > .col-md-11, .mj-lg > .col-xs-11, html .mj-lg > .col-sm-11, html body .mj-lg > .col-md-11, html body .mj.mj-lg > .col-lg-11, .mj-xl > .col-xs-11, html .mj-xl > .col-sm-11, html body .mj-xl > .col-md-11, html body .mj.mj-xl > .col-lg-11, html body .mj[class].mj-xl > .col-xl-11 {
+  float: left;
+  width: 91.66667%;
+}
+
+.mj-xs > .col-xs-12, .mj-sm > .col-xs-12, html .mj-sm > .col-sm-12, .mj-md > .col-xs-12, html .mj-md > .col-sm-12, html body .mj-md > .col-md-12, .mj-lg > .col-xs-12, html .mj-lg > .col-sm-12, html body .mj-lg > .col-md-12, html body .mj.mj-lg > .col-lg-12, .mj-xl > .col-xs-12, html .mj-xl > .col-sm-12, html body .mj-xl > .col-md-12, html body .mj.mj-xl > .col-lg-12, html body .mj[class].mj-xl > .col-xl-12 {
+  float: left;
+  width: 100%;
+}

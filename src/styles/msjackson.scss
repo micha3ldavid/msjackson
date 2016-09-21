@@ -1,0 +1,159 @@
+
+/**********************************************************************************************
+
+  The MIT License (MIT)
+  Copyright (c) 2016 Michael Juliano
+
+  Permission is hereby granted, free of charge, to any person obtaining 
+  a copy of this software and associated documentation files (the "Software"), 
+  to deal in the Software without restriction, including without limitation the 
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+  copies of the Software, and to permit persons to whom the Software is 
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all 
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+  INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+  PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE 
+  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+  OTHER DEALINGS IN THE SOFTWARE.
+  
+***********************************************************************************************/
+
+//
+// Docs -
+//
+// msJackson
+// You can either override the pubic variables 
+// or pass in values to the msJackson mixin.
+//
+// @param {list} $breakpoints
+// @param {number} $columns 
+// @param {number} $gutter
+//
+// ---------------------------
+
+//
+// public variables
+// ---------------------------
+
+$msJackson-columns: 12 !default;
+$msJackson-gutters: 30px !default;
+$msJackson-breakpoints: xs, sm, md, lg, xl !default;
+
+//
+// private variables
+// ---------------------------
+
+$-msJackson-row-initialized: false;
+$-msJackson-grid-initialized: false;
+$-msJackson-selectors: 
+  // 0 points
+  '', 
+  // 1 point
+  'html ', 
+  // 2 points
+  'html body ',
+  // 12 points 
+  'html body .mj',
+  // 22 points 
+  'html body .mj[class]';
+
+@mixin msJackson ( 
+  $breakpoints: $msJackson-breakpoints, 
+  $columns: $msJackson-columns, 
+  $gutter: $msJackson-gutters ) {
+    
+    @include -msJackson-row ( $gutter );
+    @include -msJackson-grid( $breakpoints, $columns );
+}
+
+@mixin -msJackson-init-row ( $gutter ) {
+  
+  @if $-msJackson-row-initialized == false {
+    
+    %-mj-row {
+      margin-left:  $gutter / -2;
+      margin-right: $gutter / -2;
+
+      &:before,
+      &:after {
+        content: '';
+        clear: both;
+        display: table;
+      }
+
+      > [class*="col-"] {
+        box-sizing: border-box;
+        padding-left:  $gutter / 2;
+        padding-right: $gutter / 2;
+      }
+    }
+    $-msJackson-row-initialized: true;
+  }
+}
+
+@mixin -msJackson-init-grid ( $columns ) {
+  
+  @if $-msJackson-grid-initialized == false {
+    
+    @for $column from 1 through $columns {
+      %-mj-col-#{$column} {
+        float: left;
+        width: percentage( $column / $columns );
+      }
+    }
+    $-msJackson-grid-initialized: true;
+  }
+}
+
+@mixin -msJackson-row ( $gutter ) {
+
+  @include -msJackson-init-row( $gutter );
+  
+  .container {
+    box-sizing: border-box;
+    padding-left: $gutter / 2;
+    padding-right: $gutter / 2;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .mj { @extend %-mj-row; }
+}
+
+@mixin -msJackson-grid ( $breakpoints, $columns ) {
+
+  @include -msJackson-init-grid( $columns );
+  
+  $length: length( $breakpoints );
+  
+  @for $i from 1 through $length {
+    
+    $name: nth( $breakpoints, $i ); 
+    
+    @each $point in $breakpoints {
+      
+      $index: index( $breakpoints, $point );
+      $selector: nth( $-msJackson-selectors, $index );
+    
+      @if $index <= $i {
+        #{$selector}.mj-#{$name} {
+          @include -msJackson-columns( $point, $columns );
+        }
+      } 
+    }
+  }
+}
+
+@mixin -msJackson-columns ( $name, $columns ) {
+  
+  @for $i from 1 through $columns {
+    > .col-#{$name}-#{$i} {
+      @extend %-mj-col-#{$i};  
+    }
+  }
+}
