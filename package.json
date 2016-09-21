@@ -25,11 +25,11 @@
   },
   "bugs": "https://github.com/micha3ldavid/msjackson/issues",
   "dependencies": {},
-  "files": {
+  "files": [
   	"src",
   	"js/*.js",
   	"styles/*.scss",
   	"styles/*.css",
   	"LICENSE"
-  }
+  ]
 }

@@ -41,7 +41,16 @@
 	// -----------------------------------------------------
 	else if ( typeof module === 'object' && module.exports ) {
 
-		module.exports = factory( root );
+		module.exports = root.document ?
+
+			factory( root ) :
+
+			function( w ) {
+				if ( !w.document ) {
+					throw new Error( "msJackson requires a window with a document" );
+				}
+				return factory( w );
+			};
 	}
 
 	//
