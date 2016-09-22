@@ -1,6 +1,6 @@
 {
   "name": "msJackson",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Light-weight grid system based off elemental breakpoints.",
   "keywords": [
   	"css",

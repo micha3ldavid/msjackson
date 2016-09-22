@@ -114,15 +114,15 @@ var mj = new msJackson([
 	{ name: 'lg', value: 990 },
 	{ name: 'xl', value: 1100 }
 ]);</pre>
-						<p>If you only want Ms. Jackson on a perticular module(s) you can specify a selector as the second parameter</p>
+						<p>If you only want Ms. Jackson on a perticular module(s) you can specify a selector as the first parameter:</p>
 						<pre>
-var mj = new msJackson([
+var mj = new msJackson('#my-module', [
 	{ name: 'xs', value: '*' },
 	{ name: 'sm', value: 480 },
 	{ name: 'md', value: 720 },
 	{ name: 'lg', value: 990 },
 	{ name: 'xl', value: 1100 }
-], '#my-module');</pre>
+]);</pre>
 					<h3>Public API</h3>
 					<p>There are a handful of helpful methods in place for interacting with Ms. Jackson. She's an easy lady, therefore her methods are easy to use as well.</p>
 					<ul class="list-unstyled">
@@ -153,7 +153,7 @@ var mj = new msJackson([
 		<script src="../src/scripts/msjackson.js"></script>
 		<script>
 
-			var j = new msJackson( [
+			var j = new msJackson( 'body', [
 				{ name: 'xs', value: '*' },
 				{ name: 'sm', value: 440 },
 				{ name: 'md', value: 770 },

@@ -102,9 +102,9 @@
 	// msJackson constructor
 	// ----------------------------------------------
 
-	function msJackson( breakpoints, container ) {
+	function msJackson( container, breakpoints ) {
 
-		return this.init( breakpoints, container );
+		return this.init( container, breakpoints );
 	}
 
 	//
@@ -244,18 +244,33 @@
 		// init
 		// contructor function
 		//
-		// @params {Array -> {Object -> name{string}/value{number}}} breakpoints
 		// @param {Node/Element} container
+		// @params {Array -> {Object -> name{string}/value{number}}} breakpoints
 		//-------------------------------------------------
-		init: function ( breakpoints, container ) {
+		init: function ( container, breakpoints ) {
+
+			var 
+			cntr = container,
+			bpts = breakpoints;
+
+			if  (typeof bpts === 'undefined' ) {
+
+				bpts = container;
+				cntr = document;
+			}
+
+			if ( typeof ctnr === 'string' ) {
+
+				ctnr = document.querySelectorAll( cntr )[0];
+			}
 
 			this.breakpoints = 
-				( breakpoints || [] ).sort(function ( a, b ) {
+				( bpts || [] ).sort(function ( a, b ) {
 					return a.value < b.value || b.value !== '*';
 			});
 
-			this.container = container && container.nodeType === 1
-				? container : document;
+			this.container = cntr && cntr.nodeType === 1
+				? cntr : document;
 
 			return this.query().watch();
 		},
