@@ -46,15 +46,15 @@ The second part of Ms. Jackson's magic rests with JavaScript. But don't worry, t
 	{ name: 'xl', value: 1100 }
 ]);</pre>
 
-If you only want Ms. Jackson on a perticular module(s) you can specify a selector as the second parameter
+If you only want Ms. Jackson on a perticular module(s) you can specify a selector as the first parameter:
 
-<pre>var mj = new msJackson([
+<pre>var mj = new msJackson('#my-module', [
 	{ name: 'xs', value: '*' },
 	{ name: 'sm', value: 480 },
 	{ name: 'md', value: 720 },
 	{ name: 'lg', value: 990 },
 	{ name: 'xl', value: 1100 }
-], '#my-module');</pre>
+]);</pre>
 
 ### Public API
 
