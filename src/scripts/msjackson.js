@@ -198,7 +198,7 @@
 				
 				w.removeEventListener( 'resize', this.original );
 
-				this.handlers.splice(o, this.handlers.length);
+				this.handlers.splice(0, this.handlers.length);
 				this.original = null;
 
 				return;
